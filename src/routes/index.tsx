@@ -73,6 +73,17 @@ const timeline = [
   { label: "+3H", depth: "2.1m", level: "CRITICAL", width: "w-[88%]" },
 ];
 
+const letterDelays = [
+  "delay-[0ms]",
+  "delay-[70ms]",
+  "delay-[140ms]",
+  "delay-[210ms]",
+  "delay-[280ms]",
+  "delay-[350ms]",
+  "delay-[420ms]",
+  "delay-[490ms]",
+];
+
 function Brand() {
   return (
     <div className="flex items-center gap-3">
@@ -159,7 +170,7 @@ function Index() {
           </div>
           <h1 aria-label="FLOODOPS" className="font-display text-5xl font-black leading-none text-foreground sm:text-7xl lg:text-[88px]">
             {"FLOODOPS".split("").map((letter, index) => (
-              <span key={`${letter}-${index}`} className="brand-letter inline-block" style={{ animationDelay: `${index * 70}ms` }}>
+              <span key={`${letter}-${index}`} className={`brand-letter inline-block ${letterDelays[index] ?? ""}`}>
                 {letter}
               </span>
             ))}
